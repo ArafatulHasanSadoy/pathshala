@@ -2,9 +2,15 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 export function Slip({
-  className, children, as: Tag = "div", onClick,
+  className,
+  children,
+  as: Tag = "div",
+  onClick,
 }: {
-  className?: string; children: ReactNode; as?: "div" | "button" | "article"; onClick?: () => void;
+  className?: string;
+  children: ReactNode;
+  as?: "div" | "button" | "article";
+  onClick?: () => void;
 }) {
   return (
     <Tag
@@ -21,8 +27,16 @@ export function Slip({
 }
 
 export function Stat({
-  label, value, hint, tone,
-}: { label: string; value: string; hint?: string; tone?: "rust" | "teal" | "ink" }) {
+  label,
+  value,
+  hint,
+  tone,
+}: {
+  label: string;
+  value: string;
+  hint?: string;
+  tone?: "rust" | "teal" | "ink";
+}) {
   const color = tone === "rust" ? "text-rust" : tone === "teal" ? "text-teal" : "text-ink";
   return (
     <Slip>
