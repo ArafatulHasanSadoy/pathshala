@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   BookMarked,
+  BookOpen,
   ClipboardList,
   FileText,
   Printer,
@@ -17,6 +18,7 @@ import { t } from "@/lib/pathshala/i18n";
 export const Route = createFileRoute("/_app/more")({ component: MorePage });
 
 const ITEMS = [
+  { to: "/guide", key: "ownerGuide" as const, icon: BookOpen },
   { to: "/setup", key: "setup" as const, icon: School },
   { to: "/teachers", key: "teachers" as const, icon: UserRound },
   { to: "/enquiries", key: "enquiries" as const, icon: Inbox },
@@ -34,15 +36,12 @@ function MorePage() {
     <div className="grid grid-cols-2 gap-3">
       {ITEMS.map((item) => (
         <Link key={item.to} to={item.to}>
-          <Slip className="flex min-h-24 flex-col justify-between">
+          <Slip className={`flex min-h-24 flex-col justify-between${item.to === "/guide" ? " bg-teal-soft border-teal/20" : ""}`}>
             <item.icon className="size-5 text-teal" />
             <p className="font-medium">{t(lang, item.key)}</p>
           </Slip>
         </Link>
       ))}
-      <Slip className="col-span-2">
-        <p className="text-sm text-muted">{t(lang, "moreSoon")}</p>
-      </Slip>
     </div>
   );
 }
