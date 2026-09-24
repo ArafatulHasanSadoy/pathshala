@@ -51,23 +51,50 @@ export function hmToPretty(hm: string): string {
 }
 
 export const DAY_EN: Record<DayKey, string> = {
-  sun: "Sunday", mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday",
+  sun: "Sunday",
+  mon: "Monday",
+  tue: "Tuesday",
+  wed: "Wednesday",
+  thu: "Thursday",
+  fri: "Friday",
+  sat: "Saturday",
 };
 
 export const DAY_BN: Record<DayKey, string> = {
-  sun: "রবিবার", mon: "সোমবার", tue: "মঙ্গলবার", wed: "বুধবার", thu: "বৃহস্পতিবার", fri: "শুক্রবার", sat: "শনিবার",
+  sun: "রবিবার",
+  mon: "সোমবার",
+  tue: "মঙ্গলবার",
+  wed: "বুধবার",
+  thu: "বৃহস্পতিবার",
+  fri: "শুক্রবার",
+  sat: "শনিবার",
 };
 
 export const METHOD_EN: Record<PayMethod, string> = {
-  cash: "Cash", bkash: "bKash", nagad: "Nagad", bank: "Bank", card: "Card", other: "Other",
+  cash: "Cash",
+  bkash: "bKash",
+  nagad: "Nagad",
+  bank: "Bank",
+  card: "Card",
+  other: "Other",
 };
 
 export const METHOD_BN: Record<PayMethod, string> = {
-  cash: "নগদ", bkash: "বিকাশ", nagad: "নগদ", bank: "ব্যাংক", card: "কার্ড", other: "অন্যান্য",
+  cash: "নগদ",
+  bkash: "বিকাশ",
+  nagad: "নগদ",
+  bank: "ব্যাংক",
+  card: "কার্ড",
+  other: "অন্যান্য",
 };
 
 export const ATT_EN: Record<AttendanceStatus, string> = {
-  present: "Present", absent: "Absent", late: "Late", excused: "Excused", left_early: "Left early", not_enrolled: "Not enrolled",
+  present: "Present",
+  absent: "Absent",
+  late: "Late",
+  excused: "Excused",
+  left_early: "Left early",
+  not_enrolled: "Not enrolled",
 };
 
 export function hueColor(hue: number): string {

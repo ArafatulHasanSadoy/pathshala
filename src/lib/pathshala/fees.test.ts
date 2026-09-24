@@ -30,8 +30,17 @@ test("TEST-001 oldest-first allocation: 3 x 2000, pay 5000", () => {
   assert.equal(allocations[2]!.invoiceId, "inv-aug");
   assert.equal(allocations[2]!.amount, 1000);
   const fakePay = {
-    id: "p", studentId, amount: 5000, method: "cash" as const, reference: "", at: "2026-09-01T10:00:00",
-    receiptNo: "RCP-TEST", allocations, credit: 0, voided: false, note: "",
+    id: "p",
+    studentId,
+    amount: 5000,
+    method: "cash" as const,
+    reference: "",
+    at: "2026-09-01T10:00:00",
+    receiptNo: "RCP-TEST",
+    allocations,
+    credit: 0,
+    voided: false,
+    note: "",
   };
   data.payments.push(fakePay);
   assert.equal(invoiceBalance(data.invoices.find((i) => i.id === "inv-jun")!, data.payments), 0);

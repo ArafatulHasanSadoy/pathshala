@@ -82,6 +82,7 @@ export function accountBalance(data: AppData, accountId: string): number {
   for (const inc of data.otherIncome) if (inc.accountId === accountId) n += inc.amount;
   for (const e of data.expenses) if (e.accountId === accountId) n -= e.amount;
   for (const pay of data.payouts) if (pay) {
+    /* payouts from cash by default */
     if (accountId === "acc-cash") n -= pay.amount;
   }
   return n;
@@ -89,7 +90,12 @@ export function accountBalance(data: AppData, accountId: string): number {
 
 export function accountForMethod(data: AppData, method: string): string {
   const map: Record<string, string> = {
-    cash: "acc-cash", bkash: "acc-bkash", nagad: "acc-nagad", bank: "acc-bank", card: "acc-bank", other: "acc-cash",
+    cash: "acc-cash",
+    bkash: "acc-bkash",
+    nagad: "acc-nagad",
+    bank: "acc-bank",
+    card: "acc-bank",
+    other: "acc-cash",
   };
   const id = map[method] ?? "acc-cash";
   return data.accounts.some((a) => a.id === id) ? id : data.accounts[0]?.id ?? "acc-cash";
